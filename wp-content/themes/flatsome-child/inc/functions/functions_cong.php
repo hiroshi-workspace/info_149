@@ -1,13 +1,13 @@
-<?php 
+<?php
 
 // Include Shortcodes
 function include_my_shortcodes()
 {
-  
-    include get_stylesheet_directory() . '/inc/shortcodes/custom-breadcrumb.php';
-    include get_stylesheet_directory() . '/inc/shortcodes/display-acf.php';
-    include get_stylesheet_directory() . '/inc/shortcodes/post-date.php';
-  
+
+    // include get_stylesheet_directory() . '/inc/shortcodes/custom-breadcrumb.php';
+    include get_stylesheet_directory() . '/inc/shortcodes/display-custom-product.php';
+    // include get_stylesheet_directory() . '/inc/shortcodes/post-date.php';
+
 
 
 }
@@ -32,10 +32,10 @@ function add_short_description_to_product_loop() {
     // Kiểm tra có phải trang shop hoặc trang danh mục không
     if (is_shop() || is_product_category()) {
         global $product;
-        
+
         // Lấy short description
         $short_description = $product->get_short_description();
-        
+
         // Nếu có short description thì hiển thị
         if (!empty($short_description)) {
             echo '<div class="product-short-desc">' . wp_trim_words($short_description, 20, '...') . '</div>';

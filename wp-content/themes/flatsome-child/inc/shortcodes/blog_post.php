@@ -1,5 +1,4 @@
 <?php
-// Dùng khi lỡ may update flatsome
 // [blog_posts]
 function shortcode_latest_from_blog($atts, $content = null, $tag = '')
 {
@@ -311,7 +310,7 @@ function shortcode_latest_from_blog($atts, $content = null, $tag = '')
 							<h5 class="post-title is-<?php echo esc_attr($title_size); ?> <?php echo esc_attr($title_style); ?>">
 								<a href="<?php the_permalink() ?>" class="plain"><?php the_title(); ?></a>
 							</h5>
-
+							<?php echo do_shortcode('[custom_single_blog]')?>
 							<div class="is-divider"></div>
 							<?php if ($show_excerpt !== 'false') { ?>
 								<p class="from_the_blog_excerpt <?php if ($show_excerpt !== 'visible') {

@@ -310,7 +310,6 @@ function shortcode_latest_from_blog($atts, $content = null, $tag = '')
 							<h5 class="post-title is-<?php echo esc_attr($title_size); ?> <?php echo esc_attr($title_style); ?>">
 								<a href="<?php the_permalink() ?>" class="plain"><?php the_title(); ?></a>
 							</h5>
-
 							<div class="is-divider"></div>
 							<?php if ($show_excerpt !== 'false') { ?>
 								<p class="from_the_blog_excerpt <?php if ($show_excerpt !== 'visible') {
@@ -334,7 +333,7 @@ function shortcode_latest_from_blog($atts, $content = null, $tag = '')
 
 							<?php if ($readmore) { ?>
 								<a href="<?php the_permalink(); ?>" class="button <?php echo esc_attr($readmore_color); ?> is-<?php echo esc_attr($readmore_style); ?> is-<?php echo esc_attr($readmore_size); ?> mb-0">
-									<?php echo wp_kses_post($readmore); ?>
+								<?php echo wp_kses_post($readmore); ?>  <i class="fa-solid fa-arrow-right"></i>
 								</a>
 							<?php } ?>
 

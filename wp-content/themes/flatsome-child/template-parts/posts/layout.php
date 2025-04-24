@@ -13,8 +13,6 @@ do_action('flatsome_before_blog');
 <div class="row align-center">
 
 	<div class="large-10 col">
-	<div class="mb-2"><?php echo do_shortcode('[product_specs]') ?></div>
-    <h1>alo</h1>
 	<?php if(!is_single() && get_theme_mod('blog_featured', '') == 'content'){ get_template_part('template-parts/posts/featured-posts'); } ?>
 
 	<?php
