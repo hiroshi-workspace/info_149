@@ -335,11 +335,19 @@ function ux_products($atts, $content = null, $tag = '')
 								echo '<div class="title-wrapper">';
 								do_action('woocommerce_shop_loop_item_title');
 								echo '</div>';
-								// Call my shortcode
-								echo do_shortcode('[custom_single_product]');
-								echo '<a href="' . esc_url(get_the_permalink()) . '" aria-label="' . esc_attr($product->get_title()) . '" class="view-description-custom">
+								// Call my shortcode (Kiểm tra xem phải ở trang chủ không)
+								if (!is_front_page()) {
+									echo do_shortcode('[custom_single_product]');
+									echo '<a href="' . esc_url(get_the_permalink()) . '" aria-label="' . esc_attr($product->get_title()) . '" class="view-description-custom">
 										Chi tiết <i class="fa-solid fa-arrow-right"></i>
 									</a>';
+								} else {
+									echo '<a href="' . esc_url(get_the_permalink()) . '" aria-label="' . esc_attr($product->get_title()) . '" class="view-description-custom">
+										<i class="fa-solid fa-arrow-right"></i>
+									</a>';
+								}
+
+
 								echo '<div class="price-wrapper">';
 								do_action('woocommerce_after_shop_loop_item_title');
 								echo '</div>';
